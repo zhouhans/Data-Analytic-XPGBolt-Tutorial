@@ -76,7 +76,7 @@ Start by launching two terminals, both to the same F1 instance.
     SET
     tpch_1g=# 
     ```
-8. Run TPCH Query 6.
+8. Run TPCH query 6.
     ```
     tpch_1g=# \i queries/6.sql
         revenue    
@@ -89,7 +89,7 @@ Start by launching two terminals, both to the same F1 instance.
     tpch_1g=# \timing
     tpch_1g=# \i queries/6.sql
     ```
-    
+//Note: What does the user do next? Terminal 1 connection ends with being connected. With terminal 2, I'm not sure.
     
 [here]: https://github.com/Xilinx/ML-Development-Stack-From-Xilinx/blob/master/launching_instance.md
 [Xilinx Data-Analytic Repo]: https://github.com/Xilinx/data-analytics/tree/master/xpg/host
