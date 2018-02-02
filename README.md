@@ -7,13 +7,9 @@ The source code of XPGBolt can be found at [Xilinx Data-Analytic Repo].
 
 Instruction for launching an F1 instance can be found [here].
 
-//Note: Should standardise how the links show up: here vs name of repo/page.
-
 ## Steps to Launch XPGBolt
 
 Start by launching two terminals, both to the same F1 instance.
-
-//Note: Should we include information about why the user is running two terminals both to the same instance? What do they do? 
 
 ### Terminal 1
 1. Navigate to `/home/centos/xpg_demo`.
@@ -89,8 +85,7 @@ Start by launching two terminals, both to the same F1 instance.
     tpch_1g=# \timing
     tpch_1g=# \i queries/6.sql
     ```
-//Note: What does the user do next? Terminal 1 connection ends with being connected. With terminal 2, I'm not sure.
-    
+   
 [here]: https://github.com/Xilinx/ML-Development-Stack-From-Xilinx/blob/master/launching_instance.md
 [Xilinx Data-Analytic Repo]: https://github.com/Xilinx/data-analytics/tree/master/xpg/host
 
