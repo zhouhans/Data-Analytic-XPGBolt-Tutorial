@@ -13,23 +13,27 @@ Start by launching two terminals, both to the same F1 instance.
 
 ### Terminal 1
 1. Navigate to `/home/centos/xpg_demo`.
+
     ```
     $ cd /home/centos/xpg_demo
     $ ls
     Dockerfile  afi  postgres_f2  run_root.sh
     ```
 2. Run `./run_root.sh xpg_demo_container work_space`.
+
     ```
     $ ./run_root.sh xpg_demo_container work_space
     root@0f077c7d68a7:/# 
     ```
 3. Now that you are inside the docker container, navigate to `/home/work_space/demo`.
+
     ```
     $ cd /home/work_space/demo
     $ ls
     loadfpga.sql  postgres_f2  queries  run_pg.sh
     ```
 4. Run `run_pg.sh`.
+
     ```
     $ ./run_pg.sh
     2018-01-23 22:38:46.530 UTC [21] LOG:  database system was shut down at 2018-01-08 21:45:59 UTC
@@ -40,22 +44,26 @@ Start by launching two terminals, both to the same F1 instance.
 
 ### Terminal 2
 1. Run `sudo docker exec –it xpg_demo_container /bin/bash`.
+
     ```
     $ sudo docker exec –it xpg_demo_container /bin/bash
     root@0f077c7d68a7:/# 
     ```
 2. Navigate to `/home/work_space/demo`.
+
     ```
     $ cd /home/work_space/demo
     $ ls
     loadfpga.sql  postgres_f2  queries  run_pg.sh
     ```   
 4. Now that you are inside the docker container, run `su postgres` to change user to `postgres`. This takes you inside the PostgreSQL console.
+
     ```
     $ su postgres
     postgres@0f077c7d68a7:
     ```
 6. Run `psql tpch_1g` to connect to 1GB TPCH database.
+
     ```
     $ psql tpch_1g
     psql (9.6.3, server 9.6.2)
@@ -64,6 +72,7 @@ Start by launching two terminals, both to the same F1 instance.
     tpch_1g=# 
     ``` 
 7. Load XPGBolt library at runtime. This step loads the .so file and the FPGA bitstream.
+
     ```
     tpch_1g=# \i loadfpga.sql
     LOAD
@@ -73,6 +82,7 @@ Start by launching two terminals, both to the same F1 instance.
     tpch_1g=# 
     ```
 8. Run TPCH query 6.
+
     ```
     tpch_1g=# \i queries/6.sql
         revenue    
@@ -81,6 +91,7 @@ Start by launching two terminals, both to the same F1 instance.
         (1 row)
     ```
 9. Turn on timing and rerun query 6 to see the runtime.
+
     ```
     tpch_1g=# \timing
     tpch_1g=# \i queries/6.sql
